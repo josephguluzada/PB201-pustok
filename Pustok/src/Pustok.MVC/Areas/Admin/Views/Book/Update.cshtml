@@ -1,0 +1,104 @@
+﻿@model BookUpdateVM
+@{
+    List<Author> authors = ViewBag.Authors;
+}
+<div class="container-fluid">
+    <h1>Create</h1>
+    <form method="post" enctype="multipart/form-data">
+        <div class="row">
+            <div class="mb-3 col-md-4">
+                <label class="form-label">Title</label>
+                <input asp-for="Title" class="form-control" aria-describedby="emailHelp">
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="mb-3 col-md-4">
+                <label class="form-label">Code</label>
+                <input asp-for="ProductCode" class="form-control" aria-describedby="emailHelp">
+                <span asp-validation-for="ProductCode" class="text-danger"></span>
+            </div>
+            <div class="mb-3 col-md-4">
+                <label class="form-label">Description</label>
+                <textarea asp-for="Desc" class="form-control"></textarea>
+                <span asp-validation-for="Desc" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="mb-3 col-md-6">
+                <label class="form-label">Authors</label>
+                <select class="form-control" asp-for="AuthorId" asp-items="@(new SelectList(authors,"Id","FullName"))">
+                    <option selected disabled>Choose Author</option>
+                </select>
+                <span asp-validation-for="AuthorId" class="text-danger">
+
+                </span>
+            </div>
+            <div class="mb-3 col-md-6">
+                <label class="form-label">Genres</label>
+                <select class="form-control" asp-for="GenreId" asp-items="@(new SelectList(ViewBag.Genres,"Id","Name"))">
+                    <option selected disabled>Choose Genre</option>
+                </select>
+                <span asp-validation-for="GenreId" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="mb-3 col-md-2">
+                <label class="form-label">Cost Price</label>
+                <input asp-for="CostPrice" class="form-control" aria-describedby="emailHelp">
+                <span asp-validation-for="CostPrice" class="text-danger"></span>
+            </div>
+            <div class="mb-3 col-md-2">
+                <label class="form-label">Sale Price</label>
+                <input asp-for="SalePrice" class="form-control" aria-describedby="emailHelp">
+                <span asp-validation-for="SalePrice" class="text-danger"></span>
+            </div>
+            <div class="mb-3 col-md-2">
+                <label class="form-label">DiscountPercent</label>
+                <input asp-for="DiscountPercent" class="form-control">
+                <span asp-validation-for="DiscountPercent" class="text-danger"></span>
+            </div>
+            <div class="mb-3 col-md-2">
+                <label class="form-label">StockCount</label>
+                <input asp-for="StockCount" class="form-control">
+                <span asp-validation-for="StockCount" class="text-danger"></span>
+            </div>
+            <div class="mb-3 col-md-2">
+                <label class="form-label">IsAvailable</label>
+                <input asp-for="IsAvailable" class="form-control">
+                <span asp-validation-for="IsAvailable" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="mb-3 col-md-8">
+                <label class="form-label">Poster Image</label>
+                <input asp-for="PosterImageFile" class="form-control" aria-describedby="emailHelp">
+                <span asp-validation-for="PosterImageFile" class="text-danger"></span>
+                <img style="width:150px" src="~/uploads/books/@Model.BookImages.FirstOrDefault(x=>x.IsPoster == true)?.ImageUrl"/>
+            </div>
+            <div class="mb-3 col-md-8">
+                <label class="form-label">Hover Image</label>
+                <input asp-for="HoverImageFile" class="form-control" aria-describedby="emailHelp">
+                <span asp-validation-for="HoverImageFile" class="text-danger"></span>
+                <img style="width:150px" src="~/uploads/books/@Model.BookImages.FirstOrDefault(x=>x.IsPoster == false)?.ImageUrl" />
+            </div>
+            <div class="mb-3 col-md-12">
+                <label class="form-label">Image Files</label>
+                <input asp-for="ImageFiles" class="form-control">
+                <span asp-validation-for="ImageFiles" class="text-danger"></span>
+
+                <div class="row">
+                   @foreach (var item in Model.BookImages.Where(x=>x.IsPoster == null))
+                    {
+                        <div class="col-md-2">
+                            <img style="width:150px" src="~/uploads/books/@item?.ImageUrl" />
+                            <input asp-for="BookImageIds" hidden value="@item.Id  "/>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <button type="submit" class="btn btn-primary">Create</button>
+        <a asp-action="index" class="btn btn-light">Cancel</a>
+    </form>
+
+</div>

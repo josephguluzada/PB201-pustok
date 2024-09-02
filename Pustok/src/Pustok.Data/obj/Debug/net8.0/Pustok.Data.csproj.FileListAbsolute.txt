@@ -1,0 +1,17 @@
+C:\Users\asus\Desktop\Pustok\src\Pustok.Data\bin\Debug\net8.0\Pustok.Data.deps.json
+C:\Users\asus\Desktop\Pustok\src\Pustok.Data\bin\Debug\net8.0\Pustok.Data.dll
+C:\Users\asus\Desktop\Pustok\src\Pustok.Data\bin\Debug\net8.0\Pustok.Data.pdb
+C:\Users\asus\Desktop\Pustok\src\Pustok.Data\obj\Debug\net8.0\Pustok.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\asus\Desktop\Pustok\src\Pustok.Data\obj\Debug\net8.0\Pustok.Data.AssemblyInfoInputs.cache
+C:\Users\asus\Desktop\Pustok\src\Pustok.Data\obj\Debug\net8.0\Pustok.Data.AssemblyInfo.cs
+C:\Users\asus\Desktop\Pustok\src\Pustok.Data\obj\Debug\net8.0\Pustok.Data.csproj.CoreCompileInputs.cache
+C:\Users\asus\Desktop\Pustok\src\Pustok.Data\obj\Debug\net8.0\Pustok.Data.dll
+C:\Users\asus\Desktop\Pustok\src\Pustok.Data\obj\Debug\net8.0\refint\Pustok.Data.dll
+C:\Users\asus\Desktop\Pustok\src\Pustok.Data\obj\Debug\net8.0\Pustok.Data.pdb
+C:\Users\asus\Desktop\Pustok\src\Pustok.Data\obj\Debug\net8.0\ref\Pustok.Data.dll
+C:\Users\asus\Desktop\Pustok\src\Pustok.Data\bin\Debug\net8.0\Pustok.Core.dll
+C:\Users\asus\Desktop\Pustok\src\Pustok.Data\bin\Debug\net8.0\Pustok.Core.pdb
+C:\Users\asus\Desktop\Pustok\src\Pustok.Data\obj\Debug\net8.0\Pustok.Data.csproj.AssemblyReference.cache
+C:\Users\asus\Desktop\Pustok\src\Pustok.Data\obj\Debug\net8.0\Pustok.D.4C22E12F.Up2Date
+C:\Users\asus\Desktop\Pustok\src\Pustok.Data\bin\Debug\net8.0\Pustok.Data.runtimeconfig.json
+C:\Users\asus\Desktop\Pustok\src\Pustok.Data\obj\Debug\net8.0\Pustok.Data.genruntimeconfig.cache

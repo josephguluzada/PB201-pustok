@@ -1,0 +1,35 @@
+﻿@model List<Genre>
+@{
+    int counter = 0;
+}
+<div style="display:flex;justify-content:space-between; align-items:center; padding: 0 20px 0 20px">
+    <h1>Genres Index</h1>
+
+    <a asp-action="Create" class="btn btn-success">Create</a>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">IsDeleted</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+       @foreach (var item in Model)
+        {
+            counter++;
+            <tr>
+                <th scope="row">@counter</th>
+                <td>@item.Name</td>
+                <td>@item.IsDeleted</td>
+                <td>
+                    <a asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary">Update</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,45 @@
+﻿@model List<Book>
+@{
+    int counter = 0;
+}
+<div style="display:flex;justify-content:space-between; align-items:center; padding: 0 20px 0 20px">
+    <h1>Genres Index</h1>
+
+    <a asp-action="Create" class="btn btn-success">Create</a>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Code</th>
+            <th scope="col">SalePrice</th>
+            <th scope="col">CostPrice</th>
+            <th scope="col">Stock Count</th>
+            <th scope="col">Image</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            counter++;
+            <tr>
+                <th scope="row">@counter</th>
+                <td>@item.Title</td>
+                <td>@item.ProductCode</td>
+                <td>@item.SalePrice</td>
+                <td>@item.CostPrice</td>
+                <td>@item.StockCount</td>
+                <td>
+                    <img style="width:150px;" src="~/uploads/books/@item.BookImages.FirstOrDefault(x=>x.IsPoster == true)?.ImageUrl"/>
+                </td>
+                <td>
+                    <a asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary">Update</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
